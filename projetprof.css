@@ -230,7 +230,7 @@ h4{
     width:770px;
     height: 480px;
     border:1px solid ;
-    background-image: url("voiture1.png");
+    background-image: url("images/voiture1.png");
     background-size: cover;      /* prend tout l’arrière-plan */
     background-position: center; /* centre l’image */
     background-repeat: no-repeat;/
@@ -283,7 +283,7 @@ h4{
     height: 480px;
     border:1px solid;
     border-radius:6px;
-    background-image:url("img12.png");
+    background-image:url("images/img12.png");
     background-size:cover;
     background-position:center;
     background-repeat: no-repeat;
