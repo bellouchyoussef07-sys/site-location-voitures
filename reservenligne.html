@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservation en ligne</title>
+</head>
+<body>
+
+   <header>
+        <img src="Logo1.png" id="logo">
+    <nav>
+    <ul>
+        <li><a href="projetprof.html" >Acceuil</a> </li>
+        <li><a href="agences.html" >Nos Agences</a></li>
+        <li><a href="reservenligne.html" > Reservation en ligne</a></li>
+        
+    </ul>
+    </nav>
+    <a href="reservenligne.html" >
+    <button  id="reserver">Reserver</button></a>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.DveH549w68eK3P0jzfIc1gHaHa?w=512&h=512&rs=1&pid=ImgDetMain&o=7&rm=3" id="compte">
+    
+    </header>
+
+ 
+<div class="hero">
+  <div class="hero1"><span style="font-size:20px;">🚗</span>  Trois agences — Une seule plateforme</div>
+  <p id="P1">Réservez votre<br>voiture en ligne</P>
+  <p>Choisissez votre agence, votre véhicule, vos dates — et confirmez votre réservation en quelques secondes.</p>
+</div>
+
+<br><br><br><br><br><br><br>
+
+
+    <div class="form-section">
+      <div class="section-head" style="margin-left:50px;">
+        <div class="section-icon " >🏢</div>
+        <div class="section-head-text">
+        <h2>Choix de l'agence</h2>
+          <p>Sélectionnez l'une de nos trois agences</p>
+        </div>
+        
+      </div>
+      <br><br><br><br><br>
+      <div class="agency-grid">
+        <div class="agency-card">
+          <img src="https://media.istockphoto.com/id/498733031/photo/panorama-of-agadir-morocco.jpg?s=170667a&w=0&k=20&c=R5_5ZlAuFnExSSSngdne5ILunCBaH7NBlMyXZgOPD5w=" style="height:200px;border-radius:15px;" alt="Agadir"><br><br>
+          <div class="agency-name">Auto-Bellou Agadir</div>
+          <div class="agency-city">📍 Agadir, Souss-Massa</div>
+          <div class="agency-cars">21 véhicules disponibles</div><br><br>
+        <button onclick="chargerVoitures('agence1')" class="button">Agadir</button>
+        </div>
+        <div class="agency-card" >
+          <img src="https://tse4.mm.bing.net/th/id/OIP.vbzf7xWNuyZf69J9GfFArAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" style="height:200px;border-radius:15px;" alt="Marrakech"><br><br>
+          <div class="agency-name">Auto-Bellou Marrakech</div>
+          <div class="agency-city">📍9 Marrakech, Tensift</div>
+          <div class="agency-cars"> véhicules disponibles</div><br><br>
+          <button onclick="chargerVoitures('agence2')" class="button">Marrakech</button>
+        </div>
+        <div class="agency-card">
+          <img src="https://images.ctfassets.net/bth3mlrehms2/1TwENu0ZXSnwNu6GzVfVE4/fa1176816167c1a03589cd613458585d/Marokko_Casablanca_Hassan_II_Moschee.jpg?w=3864&h=2173&fl=progressive&q=50&fm=jpg" style="height:200px;border-radius:15px;" alt="Casablanca"><br><br>
+          <div class="agency-name">Auto-Bellou Casablanca</div>
+          <div class="agency-city">📍9 Casablanca, Grand Casa</div>
+          <div class="agency-cars"> véhicules disponibles</div><br><br>
+          <button onclick="chargerVoitures('agence2')" class="button">Casablanca</button>
+        </div>
+       
+      </div>
+    <br><br>
+</div>
+        <br><br>
+
+
+      <div class="form-section">
+      <div class="section-head">
+        <div class="section-icon ">🚗</div>
+        <div class="section-head-text">
+          <h2>Choix de la voiture</h2>
+          <p>Les véhicules disponibles selon votre agence</p>
+        </div>
+      </div>
+      <br><br><br>
+     <div class="select-voiture-wrapper">
+    <select class="select-voiture" id="selectVoiture" onchange="choisirVoiture()" disabled>
+      <option value="">— Sélectionnez d'abord une agence —</option>
+    </select>
+  </div>
+
+  <div class="apercu-voiture" id="apercuVoiture">
+    <div class="info-voiture">
+      <strong id="nomVoiture" style="color:#0077b6;font-size:20px;">—</strong>
+      </div>
+      <div class="info-voiture"></div>
+      <span id="descVoiture" style="color: red ; margin-left:50%;">—</span>
+      
+    <div class="badge-prix" id="prixVoiture"> MAD/j</div>
+  </div>
+    </div>
+
+
+
+
+<br><br><br>
+     <div class="form-section">
+      <div class="section-head">
+        <div class="section-icon icon-coral">📅</div>
+        <div class="section-head-text">
+          <h2>Dates de location</h2>
+          <p>Indiquez votre période de location</p>
+        </div>
+      </div><br><br><br><br><br>
+       <div class="date-grid">
+        <div class="field-group">
+          <label class="field-label">📅 Date de début</label>
+          <input type="date" class="field-input" id="dateStart" onchange="calcDate()">
+          <p class="error-msg" id="err-start">⚠️ Veuillez indiquer la date de début.</p>
+        </div>
+        <div class="field-group">
+          <label class="field-label">📅 Date de fin</label>
+          <input type="date" class="field-input" id="dateEnd" onchange="calcDate()">
+          <p class="error-msg" id="err-end">⚠️ Veuillez indiquer la date de fin.</p>
+        </div>
+    </div>
+        <p class="error-msg" id="err-dates">⚠️ La date de fin doit être après la date de début.</p>
+    </div>
+
+
+    <br><br><br>
+     <div class="form-section">
+      <div class="section-head" style="margin-left:-30px;">
+        <div class="section-icon icon-sun">👤</div>
+        <div class="section-head-text">
+          <h2>Vos coordonnées</h2>
+          <p>Informations du client pour la réservation</p>
+        </div>
+      </div>
+      <br><br><br>
+       <div class="client-grid">
+        <div class="field-group full">
+          <label class="field-label">👤 Nom complet</label>
+          <input type="text" class="field-input" id="clientName" placeholder="Ex : Ahmed Benali" >
+          <p class="error-msg" id="err-name">⚠️ Veuillez entrer votre nom.</p><br><br>
+        </div>
+        <div class="field-group">
+          <label class="field-label">📞 Téléphone</label>
+          <input type="tel" class="field-input" id="clientPhone" placeholder="Ex : +212 6 00 00 00 00">
+          <p class="error-msg" id="err-phone">⚠️ Veuillez entrer votre téléphone.</p><br><br>
+        </div>
+        <div class="field-group">
+          <label class="field-label">✉️ Email</label>
+          <input type="email" class="field-input" id="clientEmail" placeholder="Ex : ahmed@email.com">
+          <p class="error-msg" id="err-email">⚠️ Veuillez entrer un email valide.</p><br><br>
+        </div>
+      </div>
+    </div>
+    <br><br><br><br>
+
+     <button class="btn-submit" onclick="submitForm()">
+        ✅ Valider la réservation →
+      </button>
+  
+
+
+ 
+
+
+
+
+
+
+<style>
+
+body{
+    background-color:rgba(0, 255, 174, 0.167);
+}
+.logo{
+    font-family: 'Syne', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.header-badge {
+  color:#0d1b2a;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6.4px 19.2px;
+  border-radius: 100px;
+  margin-left: 470px;
+}
+.hero {
+    background: linear-gradient(135deg,#0077b6 0%, #00b4d8 50%, #06d6a0 100%);
+    padding: 64px 48px 48px ;  
+    text-align: center;
+    position: relative;
+    margin-top:80px;
+}
+
+.hero1{
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 4.8px 19.2px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.3);
+    margin-bottom: 19px;
+  
+}
+#P1{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:55px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 16px;
+}
+ 
+.hero p {
+  color: rgba(255,255,255,0.85);
+  font-size: 17px;
+  font-weight: 300;
+  width: 520px;
+  margin: 0 auto;
+
+}
+.form-section {
+  padding: 28px 40px;
+  border-bottom: 1px solid rgb(0, 255, 174);
+
+}
+
+ 
+.section-head {
+    display: flex;
+    width:400px;
+    height:80px;
+    border:1px solid ;
+    border-radius:10px;
+    padding-left:10px;
+    border-color:#bae6fd;
+    box-shadow: 5px 2px 5px;
+    background-color:rgba(250, 235, 215, 0.537);
+    }
+ 
+.section-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22.4px;
+    margin-top:15px;
+    
+}
+
+
+.section-head-text h2 {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 800;
+  color:#0d1b2a;
+  margin-left:20px;
+  color:red;
+   margin-top:4px;
+}
+.section-head-text p {
+  font-size:14px;
+  color:#8899aa;
+  margin-top:-10px;
+  margin-left:20px;
+
+}
+.agency-card {
+  border: 2px solid  #e8f4fd;
+  border-radius: 14px;
+  padding: 25px 16px;
+  text-align: center;
+  background-color:#f0f8ff;
+  
+
+ 
+}
+
+.agency-name { 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+    color: #0d1b2a;
+    margin-bottom: 5px;
+     }
+.agency-city { 
+    font-size:13px;
+    color:#8899aa;
+     font-size: 17px;
+    }
+.agency-cars { 
+    font-size:12px; 
+    color:#00b4d8;
+    font-weight: 600;
+    margin-top: 7px;
+    font-size: 17px;
+}
+.agency-grid{
+    display:flex;
+    justify-content: space-around;
+}
+
+.button{
+    width:110px;
+    height:45px;
+    border-radius:20px;
+    background-color:darkorange ;
+    color:white;
+    border:0px solid;
+    box-shadow:1px 3px 4px black ;
+    font-weight:800;
+    font-size:13px;
+ }
+.button:hover{
+    background-color:#06d6a0;
+    color:#e0f2fe;
+}
+
+
+.select-voiture {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 17px;
+}
+
+
+/* Aperçu voiture */
+.apercu-voiture {
+  display: flex; /*met sur une ligne */
+  justify-content:space-around;/* espace entre gauche et droite */
+  align-items: center; /* alignement vertical */
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background: #fafafa;
+}
+
+.icone-voiture {
+  font-size: 32px;
+  margin-right: 12px;
+}
+
+
+
+.badge-prix {
+  background: #ff5e00;
+  color: #fff;
+  padding: 10px ;
+  border-radius: 6px;
+  width:100px;
+  padding-left:60px;
+}
+
+/*Date de début et la fin */
+.date-grid{
+    display:flex;
+    gap: 20px; /*espace entre les deux*/
+}
+.field-group { 
+    display: flex;
+    flex-direction: column; /*la box (champ) verticale contient le titre et la date*/
+    width:50%; /*le champ prend 50% de la largeur du conteneur*/
+ }
+
+.field-label {
+  font-size: 20px;
+  font-weight: 600;
+  color:  #1b2d42;
+  
+ 
+}
+ 
+.field-input {
+  width:80%;
+  background: #f0f8ff;
+  border: 2px solid  #e8f4fd;
+  border-radius: 12px;
+  padding:12px;
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  color:#0d1b2a;
+}
+.btn-submit{
+    margin-left:120px;
+    width:900px;
+    height:70px;
+    border-radius:30px;
+    background-color:#06d6a0;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+.error-msg {
+    display: none;
+    color: red;
+    font-size: 14px;
+}
+
+
+
+/*partie menu*/
+
+    ul{
+    display:flex;
+    list-style-type: none;
+    margin-left:250px;
+    margin-top:30px;
+    font-size:large;
+
+    
+}
+
+li a {
+    
+    padding:20px 20px;
+    text-decoration:none;
+    color:black;
+}
+a:hover{
+    color:blue;
+    text-decoration:underline orange;
+}
+#logo{
+    width:130px;
+    position:absolute;
+    top:-13px;
+    margin-left:-30px;
+    background-color:aliceblue;
+    color:aliceblue;
+}
+#reserver{
+    margin-left:900px;
+    position:absolute;
+    top:33px;
+    width:130px;
+    height:50px;
+    border-radius:15px;
+    border:1px solid;
+    font-weight:bold;
+    color:aliceblue;
+    background-color:rgba(255, 68, 0, 0.858); 
+    
+}
+#compte{
+    width:40px;
+    margin-left:1200px;
+    position:absolute;
+    top:40px;
+}
+</style>
+
+
+ 
+
+
+<script>
+    // Données des voitures
+const voitures = {
+  agence1: [
+    { nom: "Dacia Logan", desc: "Économique", prix: 250,  },
+    { nom: "Renault Clio 5", desc: "Citadine Moderne", prix: 450,  },
+    { nom: "BWM X6", desc: "Luxe premium", prix: 1500,  },
+    { nom: "Lamborghini", desc: "Puissance and sport", prix: 10000,  },
+    { nom: "jeep wrangler", desc: "puissance and sport", prix: 1200,  },
+    { nom: "Renault Clio 4", desc: "Citadine populaire", prix: 350,  },
+    { nom: "Fiat 500", desc: "Mini chic", prix: 500,  },
+    { nom: "Audi Q5", desc: "Suv Premium", prix:2000,  },
+    { nom: "Dacia Duster", desc: "SUV économique", prix:600,  },
+    { nom: "Kia Picanto", desc: "Mini Pratique", prix: 250,  },
+    { nom: "Hyundai Tucson", desc: "Suv Confortable", prix:1000, },
+    { nom: "Mercrdes Class A", desc: "Compact Luxe", prix: 1300, },
+    { nom: "Toyota Prado", desc: "Suv Tout-terrain", prix: 1500,  },
+    { nom: "Dacia Sandero", desc: "Citadine economique", prix: 250,},
+    { nom: "Porche Macan", desc: "Suv sportif", prix: 3000,  },
+    { nom: "Toyota Corolla", desc: "Berline Fiable", prix: 700,  },
+    { nom: "Nissan Qashqai", desc: "Suv confortable", prix: 700,  },
+    { nom: "Ford Fiesta", desc: "Citadine Moderne", prix: 700,  },
+    { nom: "Hyundai Accent", desc: "Compact économique", prix: 500,  },
+    { nom: "Renault Megane", desc: "Berline Confortable", prix: 600,  },
+    { nom: "Seat Ibiza", desc: "Citadine sportive", prix: 650,  },
+     { nom: "Range Rover Evoque", desc: "Suv sportif", prix: 1700,  },
+  ],
+  agence2: [
+    { nom: "Hyundai Tucson", desc: "SUV", prix: 1000,},
+    { nom: "Range Rover", desc: "Luxe", prix: 1200,},
+    { nom: "Kia Picanto", desc: "Mini Pratique", prix: 250,  },
+    { nom: "Dacia sandero", desc: " Berline Économique", prix: 350,  },
+    { nom: "Renault Clio 5", desc: "Citadine économique", prix: 550,  },
+    { nom: "Renault Clio 4", desc: "Citadine populaire", prix: 350,  },
+    { nom: "BWM X6", desc: "Luxe premium", prix: 1400,  },
+    { nom: "Peugeot208", desc: "Luxe premium", prix: 450,  },
+  
+  ],
+  agence3:[
+    { nom: "Dacia Duster", desc: "SUV économique", prix:600,  },
+    { nom: "Kia Picanto", desc: "Mini Pratique", prix: 250,  },
+    { nom: "Hyundai Tucson", desc: "Suv Confortable", prix:1000, },
+    { nom: "Mercrdes Class A", desc: "Compact Luxe", prix: 1300, },
+    { nom: "Toyota Prado", desc: "Suv Tout-terrain", prix: 1500,  },
+    { nom: "Dacia Sandero", desc: "Citadine economique", prix: 250,},
+    { nom: "Audi Q5", desc: "Suv Premium", prix:2000,  },
+    { nom: "Porche Macan", desc: "Suv sportif", prix: 3000,  },
+     { nom: "Range Rover Evoque", desc: "Suv sportif", prix: 1700,  },
+  ]
+};
+
+// Charger les voitures après choix agence
+function chargerVoitures(agence) {
+  agencechoisie = agence;
+  const select = document.getElementById("selectVoiture");
+
+  select.innerHTML = '<option value="">-- Choisir une voiture --</option>';
+
+  voitures[agence].forEach((v, index) => {
+    let option = document.createElement("option");
+    option.value = index;
+    option.textContent = v.nom;
+    select.appendChild(option);
+  });
+
+  select.disabled = false;
+}
+
+// Quand on choisit une autre voiture
+
+function choisirVoiture() {
+  const select = document.getElementById("selectVoiture");
+  const valeur = select.value; //la valeur de l’option choisie
+
+  const nom = document.getElementById("nomVoiture");
+  const desc = document.getElementById("descVoiture");
+  const prix = document.getElementById("prixVoiture");
+  
+   
+
+  const voiture = voitures[agencechoisie][valeur]; 
+
+  nom.textContent = voiture.nom;
+  desc.textContent = voiture.desc;
+  prix.textContent = voiture.prix + " MAD/j";
+
+}
+
+
+
+
+
+
+
+function calcDate(){
+   
+    let Start = document.getElementById("dateStart").value;
+    let End = document.getElementById("dateEnd").value;
+
+    let errStart= document.getElementById("err-start");
+    let errEnd= document.getElementById("err-end");
+    let errDates= document.getElementById("err-dates");
+
+
+    errStart.style.display = "none";
+    errEnd.style.display = "none";
+    errDates.style.display = "none";
+
+    let isValid = true;
+
+    if (Start===""){
+        errStart.style.display = "block";
+        isValid = false;        
+    }
+
+    if (End===""){
+        errEnd.style.display = "block";
+        isValid = false;        
+    }
+
+    if(!isValid) return;
+
+    let dateStart= new Date(Start);
+    let dateEnd= new Date(End);
+
+    if(dateEnd <= dateStart){
+        errDates.style.display="block";
+        return;
+    }
+
+    let difftime = dateEnd - dateStart ;
+    days =  Math.ceil(difftime / (1000 * 60 * 60 * 24));
+    let prix = Number(document.getElementById("prixVoiture").value);
+    Total = prix * days ;
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //javascript de contact 
+
+function submitForm() {
+    
+    
+    // Récupérer les valeurs
+    let name = document.getElementById("clientName").value.trim();
+    let phone = document.getElementById("clientPhone").value.trim();
+    let email = document.getElementById("clientEmail").value.trim();
+
+    // Récupérer les messages d'erreur
+    let errName = document.getElementById("err-name");
+    let errPhone = document.getElementById("err-phone");
+    let errEmail = document.getElementById("err-email");
+
+    // Reset erreurs (cacher tout)
+    errName.style.display = "none";
+    errPhone.style.display = "none";
+    errEmail.style.display = "none";
+
+    let isValid = true;
+
+    // Vérification du nom
+    if (name === "") {
+        errName.style.display = "block";
+        isValid = false;
+    }
+
+    // Vérification téléphone (juste non vide + chiffres)
+    let phoneRegex = /^[0-9+\s]+$/;
+    if (phone === "" || !phoneRegex.test(phone)) {
+        errPhone.style.display = "block";
+        isValid = false;
+    }
+
+    // Vérification email
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "" || !emailRegex.test(email)) {
+        errEmail.style.display = "block";
+        isValid = false;
+    }
+
+    // ✅ Si tout est correct
+    if (isValid) {
+        alert("✅ Réservation envoyée avec succès ! \n Nombre de jours : " + days );
+        
+       
+
+    }
+}
+</script>
+</body>
+</html>

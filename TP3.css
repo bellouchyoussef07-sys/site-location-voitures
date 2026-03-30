@@ -1,0 +1,41 @@
+#box1{
+    width:700px;
+    height:580px;
+    margin:0% auto;
+    border:1px solid;
+    background-color:burlywood;
+}
+#box2{
+    width:655px;
+    height:490px;
+    margin:0% auto;
+    border:1px solid;
+    margin-top:20px;
+    background-color: aliceblue;
+}
+h1{
+    text-align: center;
+}
+#box3{
+    width:320px;
+    height:200px;
+    border:3px solid;
+    margin:0px auto;
+    margin-top:40px;
+}
+.img1{
+    width:200px;
+    margin-left:60px;;
+}
+
+    
+
+.img3{
+    width:100px;
+   
+     margin-top:120px;
+}
+#box4{
+    display:flex;
+    justify-content: space-around;
+}

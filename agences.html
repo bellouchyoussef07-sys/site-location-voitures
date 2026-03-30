@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nos Agences</title>
+    <link rel="stylesheet" href="agences.css">
+    
+</head>
+<body>
+
+    <header>
+        <img src="Logo1.png" id="logo">
+    <nav>
+    <ul>
+        <li><a href="projetprof.html" >Acceuil</a> </li>
+        <li><a href="agences.html" >Nos Agences</a></li>
+        <li><a href="reservenligne.html" > Reservation en ligne</a></li>
+        
+    </ul>
+    </nav>
+    <a href="reservenligne.html" >
+    <button  id="reserver">Reserver</button></a>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.DveH549w68eK3P0jzfIc1gHaHa?w=512&h=512&rs=1&pid=ImgDetMain&o=7&rm=3" id="compte">
+    
+    </header>
+    
+
+   <h1 class="title">Nos agences au Maroc</h1>
+
+    <section class="agences-container">
+
+        <div class="agence-card">
+            <img src="https://media.istockphoto.com/id/498733031/photo/panorama-of-agadir-morocco.jpg?s=170667a&w=0&k=20&c=R5_5ZlAuFnExSSSngdne5ILunCBaH7NBlMyXZgOPD5w=" style="height:200px;" alt="Agadir"><br><br>
+            <h2>Agadir</h2><br>
+            <p>Aéroport Al Massira</p>
+            <p>06 00 00 00 00</p><br>
+            <a href="reservation.html"> <button>Voir voitures</button></a>    
+        </div>
+
+        <div class="agence-card">
+            <img src="https://images.ctfassets.net/bth3mlrehms2/1TwENu0ZXSnwNu6GzVfVE4/fa1176816167c1a03589cd613458585d/Marokko_Casablanca_Hassan_II_Moschee.jpg?w=3864&h=2173&fl=progressive&q=50&fm=jpg" style="height:200px;" alt="Casablanca"><br><br>
+            <h2>Casablanca</h2><br>
+            <p>Aéroport Mohammed V</p>
+            <p>06 11 11 11 11</p><br>
+            <a href="reservationcasa.html">
+                <button>Voir voitures</button>
+            </a>
+
+        </div>
+
+        <div class="agence-card">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.vbzf7xWNuyZf69J9GfFArAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" style="height:200px;" alt="Marrakech"><br><br>
+            <h2>Marrakech</h2><br>
+            <p>Gare Marrakech</p>
+            <p>06 22 22 22 22</p><br>
+            <a href="reservationMrakch.html">
+                <button>Voir voitures</button>
+            </a>
+        </div>
+
+    </section>
+
+    <style>
+body {
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+    margin-top:60px;
+    color:darkgoldenrod;
+    font-family:cursive;
+    
+}
+
+.agences-container {
+    display:flex;
+    justify-content: space-around;
+}
+
+.agence-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 15px;
+    width:370px;
+    height:400px;
+    margin-top:80px;
+}
+
+.agence-card img {
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+}
+
+.agence-card h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0 5px;
+    color:blue;
+
+}
+
+.agence-card p {
+    color: gray;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #f59e0b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d97706;
+}
+
+    </style>
+       
+
+</body>
+</html>
+
+<style>
+    ul{
+    display:flex;
+    list-style-type: none;
+    margin-left:250px;
+    margin-top:30px;
+    font-size:large;
+
+    
+}
+
+li a {
+    
+    padding:20px 20px;
+    text-decoration:none;
+    color:black;
+}
+a:hover{
+    color:blue;
+    text-decoration:underline orange;
+}
+#logo{
+    width:130px;
+    position:absolute;
+    top:-13px;
+    margin-left:-30px;
+    background-color:aliceblue;
+    color:aliceblue;
+}
+#reserver{
+    margin-left:900px;
+    position:absolute;
+    top:33px;
+    width:130px;
+    height:50px;
+    border-radius:15px;
+    border:1px solid;
+    font-weight:bold;
+    color:aliceblue;
+    background-color:rgba(255, 68, 0, 0.858); 
+    
+}
+#compte{
+    width:40px;
+    margin-left:1200px;
+    position:absolute;
+    top:40px;
+}
+</style>

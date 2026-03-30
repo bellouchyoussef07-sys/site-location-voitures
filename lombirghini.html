@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Location Range Rover</title>
+   
+</head>
+<body>
+    <div id="menu"></div>
+    <br>
+     <header id="header1">
+        <h1>Auto-Bellou 🚗</h1>
+        <p>Location de voitures de luxe</p>
+    </header>
+    
+    
+   <script>
+    fetch("menu.html")
+        .then(fichier => fichier.text())
+        .then(contenu =>{
+            document.getElementById("menu").innerHTML=contenu;
+        });
+</script>
+<div class="box3">
+    <section class="card">
+        <img src="Lamborghini Urus.jpg" alt="Lamborghini">
+
+        <div class="info">
+            <h2>Lamborghini</h2>
+            <p class="desc">
+                SUV de luxe, confortable et puissant. Idéal pour vos déplacements professionnels ou personnels.
+            </p>
+            <div>
+                <p class="P1" >✔️ Climatisation</p>
+                <p class="P1">✔️ Boîte automatique</p>
+                <p class="P1">✔️ 5 places</p>
+                <p class="P1">✔️ GPS intégré</p>
+            </div>
+
+            <p class="price"><span>Prix :</span><span style="font-size:35px;">10 000 </span> DH / jour</p>
+            <div>
+                <a href="reservenligne.html">
+            <button id="button1">Réserver maintenant</button></a>
+            <a href="agences.html">
+            <button id="button2">Autre Voiture</button></a>
+            </div>
+        </div>
+    </section>
+</div>
+<br><br>
+
+<style>
+    body {
+    
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+
+#header1 {
+    background-color:aquamarine;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+#header1 p{
+    color:dodgerblue;
+    margin-left:-45px;
+    font-size:20px;
+    font-weight:800;
+}
+
+
+.card {
+    display: flex;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /*position:absolute;
+    top:500px;
+    left:200px;*/
+}
+
+.card img {
+    width: 50%;
+    object-fit: cover;
+}
+
+
+.info {
+    padding: 20px;
+}
+
+.info h2 {
+    margin-top: 0;
+    font-family:cursive;
+    color:goldenrod;
+}
+
+.desc {
+    color: #555;
+}
+
+
+
+.price {
+    font-size: 20px;
+    color: #FF5E00;
+    font-weight: bold;
+}
+
+
+#button1 {
+    background-color: #FF5E00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size:16px;
+    font-weight:500;
+}
+
+
+#button1:hover {
+    background-color: #e04e00;
+    transform: translateY(-10px) ;
+}
+
+#button2{
+    background-color:rgba(0, 85, 255, 0.845);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 1px 2px 3px black;
+    font-size:16px;
+    font-weight:500;
+}
+#button2:hover {
+    background-color:rgb(0, 255, 174);
+    transform: translateY(-10px) ;
+}
+
+.price span{
+    
+    font-size:25px;
+    font-weight:900;
+}
+video{
+    width:90%;
+    margin-left:60px;
+}
+.P1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:15px;
+}
+#Dacia{
+    width:280px;
+    height:185px;
+    margin-left: 25px;
+    margin-top:20px;
+    border-radius:7px;
+   
+}
+
+</style>
+</body>
+</html>
